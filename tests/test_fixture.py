@@ -19,14 +19,14 @@ def desktop():
     browser.quit()
 
 
-def test_mobile(mobile):
+def test_sign_in_mobile(mobile):
     browser.open("https://github.com/")
     browser.element('.Button--link').click()
     browser.element('.HeaderMenu-link--sign-in').click()
     browser.element('.auth-form-header').should(have.text('Sign in to GitHub'))
 
 
-def test_desktop(desktop):
+def test_sign_in_desktop(desktop):
     browser.open("https://github.com/")
     browser.element('.HeaderMenu-link--sign-in').click()
     browser.element('.auth-form-header').should(have.text('Sign in to GitHub'))

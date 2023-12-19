@@ -15,7 +15,7 @@ def browser_size(request):
 
 
 @pytest.mark.parametrize("browser_size", ['mobile'], indirect=True)
-def test_mobile(browser_size):
+def test_sign_in_mobile(browser_size):
     browser.open("https://github.com/")
     browser.element('.Button--link').click()
     browser.element('.HeaderMenu-link--sign-in').click()
@@ -23,7 +23,7 @@ def test_mobile(browser_size):
 
 
 @pytest.mark.parametrize("browser_size", ['desktop'], indirect=True)
-def test_desktop(browser_size):
+def test_sign_in_desktop(browser_size):
     browser.open("https://github.com/")
     browser.element('.HeaderMenu-link--sign-in').click()
     browser.element('.auth-form-header').should(have.text('Sign in to GitHub'))

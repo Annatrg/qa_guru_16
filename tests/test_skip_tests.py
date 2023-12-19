@@ -14,7 +14,7 @@ def browser_size(request):
         return 'desktop'
 
 
-def test_mobile(browser_size):
+def test_sign_in_mobile(browser_size):
     if browser_size == 'desktop':
         pytest.skip(reason='В этом тесте проверяется авторизация в мобильной версии браузера')
     browser.open("https://github.com/")
@@ -23,7 +23,7 @@ def test_mobile(browser_size):
     browser.element('.auth-form-header').should(have.text('Sign in to GitHub'))
 
 
-def test_desktop(browser_size):
+def test_sign_in_desktop(browser_size):
     if browser_size == 'mobile':
         pytest.skip(reason='В этом тесте проверяется авторизация в компьютерная версии браузера')
     browser.open("https://github.com/")
